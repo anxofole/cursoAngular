@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let heroe of heroes" [ngClass]="{'is-selected':heroe.selected}" [ngStyle]="{'color': color}">
+    {{heroe.name}}
+  </li>
+</ul>
+
+<input type="color" [(ngModel)]="color">

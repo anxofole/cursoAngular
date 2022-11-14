@@ -1,0 +1,57 @@
+<form [formGroup]="heroForm" (ngSubmit)="onSubmit()" novalidate>
+  <div>
+    <label>Name:
+      <input formControlName="name">
+    </label>
+    <div [hidden]="heroForm.controls['name'].valid || f['name'].pristine">
+        <span *ngIf="name?.errors?.['required']">Name is required</span>
+        <span *ngIf="name?.errors?.['forbiddenName']">'Bob' cannot be used</span>
+    </div>
+  </div>
+  <div>
+    <label>Street:
+      <input formControlName="street">
+    </label>
+  </div>
+  <div>
+    <label>City:
+      <input formControlName="city">
+    </label>
+  </div>
+  <div>
+    <label>State:
+      <select formControlName="state">
+        <option *ngFor="let state of states" [value]="state">{{state}}</option>
+      </select>
+    </label>
+  </div>
+  <div>
+    <label>Zip Code:
+      <input formControlName="zip">
+    </label>
+    <div [hidden]="heroForm.controls['zip'].valid || heroForm.controls['zip'].pristine">
+      zip is invalid
+    </div>
+  </div>
+  <div>
+    <h4>Super power:</h4>
+    <label><input type="radio" formControlName="power" value="flight">Flight</label>
+    <label><input type="radio" formControlName="power" value="x-ray vision">X-ray vision</label>
+    <label><input type="radio" formControlName="power" value="strength">Strength</label>
+  </div>
+  <div class="checkbox">
+    <label>
+      <input type="checkbox" formControlName="sidekick">I have a sidekick.
+    </label>
+  </div>
+
+  <button type="submit" [disabled]="!heroForm.valid">Submit</button>
+
+  <hr>
+
+  <button (click)="update()">Update</button>
+
+  <div>
+    model: {{ heroForm.value | json }}<br /> form status?: {{heroForm.status}}
+  </div>
+</form>

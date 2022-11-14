@@ -1,0 +1,23 @@
+<h2>Heroes</h2>
+
+<ul class="heroes" id="heroes-list">
+  <li *ngFor="let hero of heroes" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+    <span class="hero-element">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </span>
+    <button id="delete-button" class="delete-button" (click)="deleteHero(hero, $event)">Delete</button>
+  </li>
+</ul>
+
+<div class="error" *ngIf="error">{{error}}</div>
+<button id="addHero" (click)="addHero()">Add New Hero</button>
+<div *ngIf="addingHero">
+  <app-detail (closed)="closed($event)"></app-detail>
+</div>
+
+<div *ngIf="selectedHero">
+  <h2>
+    {{selectedHero.name | uppercase}} is my hero
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

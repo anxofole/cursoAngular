@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+.sidebar {
+  width: 10%;
+  border: 1px solid #000;
+  border-radius: 4px;
+  padding: 10px;
+}
+.main {
+  flex: 1;
+  margin-left: 10%;
+  padding: 10px;
+}

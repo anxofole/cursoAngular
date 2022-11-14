@@ -1,0 +1,13 @@
+<h1>parent</h1>
+<p>count: {{ count }}</p>
+<p>Info: {{ info | json }}</p>
+<button (click)="incrementCount()">Increment count</button>
+<button (click)="changeInfoProperties()">change info Properties</button>
+<button (click)="changeInfoObject()">change info Object</button>
+
+<hr />
+
+<div class="childs">
+  <app-child-default [count]="count" [info]="info" (result)="onCountChange($event)"></app-child-default>
+  <app-child-push [count]="count" [info]="info" (result)="onCountChange($event)"></app-child-push>
+</div>

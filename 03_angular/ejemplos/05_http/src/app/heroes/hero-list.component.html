@@ -1,0 +1,8 @@
+<h2>Heroes</h2>
+<button (click)="add()">add</button>
+
+<ul>
+  <li *ngFor="let hero of heroes">
+    {{hero.name}} [{{hero.power}}] <button (click)="delete(hero)">X</button>
+  </li>
+</ul>

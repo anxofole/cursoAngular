@@ -1,0 +1,17 @@
+<p>settings works!</p>
+
+{{ "HELLO" | translate }}
+<p>
+  {{ "HELLO_NAME" | translate: { name: nameParam, surname: surnameParam } }}
+</p>
+<p
+  [translate]="'HELLO_NAME'"
+  [translateParams]="{ name: nameParam, surname: surnameParam }"
+></p>
+
+<p>
+  {{ messageTranslated }}
+</p>
+
+<button (click)="switchLang('es')">ES</button>
+<button (click)="switchLang('en')">EN</button>

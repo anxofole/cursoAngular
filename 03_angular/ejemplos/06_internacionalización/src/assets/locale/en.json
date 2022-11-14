@@ -1,0 +1,4 @@
+{
+  "HELLO": "Hello world!",
+  "HELLO_NAME": "Hello {{name}} {{surname}}"
+}
