@@ -1,0 +1,8 @@
+npm install -g @angular/cli
+ng help
+ng new PROJECT-NAME
+	routing => yes
+	SCSS
+ng serve
+ng test
+ng generate component 	

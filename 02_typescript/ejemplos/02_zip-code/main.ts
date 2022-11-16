@@ -1,5 +1,5 @@
-import * as Validator from './zip-code-validator-utils';
+import { ZipCodeValidator, numberRegexp } from "./zip-code-validator-utils";
 
-const validator = new Validator.ZipCodeValidator();
+const validator = new ZipCodeValidator();
 
-
+validator.isAcceptable1("string");

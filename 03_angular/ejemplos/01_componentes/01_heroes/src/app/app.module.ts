@@ -4,17 +4,12 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeroListComponent } from './heroes/hero-list.component';
+import { PatataComponent } from './patata/patata.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroListComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule
-  ],
+  declarations: [AppComponent, HeroListComponent, PatataComponent],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

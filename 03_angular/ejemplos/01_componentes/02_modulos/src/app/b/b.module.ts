@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { BarComponent } from './bar/bar.component';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-  declarations: [BarComponent]
+  imports: [CommonModule],
+  declarations: [BarComponent],
+  exports: [BarComponent],
 })
-export class BModule { }
+export class BModule {}
