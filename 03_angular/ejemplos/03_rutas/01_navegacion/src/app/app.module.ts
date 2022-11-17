@@ -13,25 +13,35 @@ import { EditProfileComponent } from './profile/edit-profile.component';
 const routes: Route[] = [
   {
     path: 'profiles',
-    component: AllProfilesComponent
+    component: AllProfilesComponent,
+    children: [
+      {
+        path: 'new',
+        component: NewProfileComponent,
+      },
+      {
+        path: ':id',
+        component: EditProfileComponent,
+      },
+    ],
   },
   {
-    path: 'profiles/new',
-    component: NewProfileComponent
+    path: 'home',
+    component: HomeComponent,
   },
   {
-    path: 'profiles/:id',
-    component: EditProfileComponent
+    path: 'settings',
+    component: SettingsComponent,
   },
   {
     path: '',
     redirectTo: 'profiles',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: '**',
-    component: NotFoundComponent
-  }
+    component: NotFoundComponent,
+  },
 ];
 
 @NgModule({
@@ -42,13 +52,13 @@ const routes: Route[] = [
     NewProfileComponent,
     EditProfileComponent,
     AllProfilesComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes, { enableTracing: true })
+    RouterModule.forRoot(routes, { enableTracing: true }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

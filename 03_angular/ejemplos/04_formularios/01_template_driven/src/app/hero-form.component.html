@@ -1,23 +1,33 @@
 <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
   <div>
     <label for="name">Name</label>
-    <input type="text" id="name" [(ngModel)]="model.name" name="name" #name="ngModel" required>
-    <div [hidden]="name.valid || name.pristine">
-      Name is required
-    </div>
+    <input
+      type="text"
+      id="name"
+      [(ngModel)]="model.name"
+      name="name"
+      #name="ngModel"
+      required
+    />
+    <div [hidden]="name.valid || name.pristine">Name is required</div>
   </div>
- 
+
   <div>
     <label for="alterEgo">Alter Ego</label>
-    <input type="text" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo">
+    <input
+      type="text"
+      id="alterEgo"
+      [(ngModel)]="model.alterEgo"
+      name="alterEgo"
+    />
   </div>
 
   <button type="submit" [disabled]="!heroForm.form.valid">Submit</button>
 
-  <hr>
+  <hr />
 
   <div>
-    model: {{model | json}}<br/> form is valid?: {{heroForm.form.valid}}<br/>
+    model: {{ model | json }}<br />
+    form is valid?: {{ heroForm.form.valid }}<br />
   </div>
-
 </form>

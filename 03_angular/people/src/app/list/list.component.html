@@ -1,0 +1,11 @@
+<ul>
+  <li
+    class="person"
+    [ngClass]="{ enabled: person.enabled }"
+    (click)="selectPerson(person)"
+    *ngFor="let person of people"
+  >
+    {{ person.name }} {{ person.surname }} - {{ person.email }} -
+    {{ person.age }}
+  </li>
+</ul>
