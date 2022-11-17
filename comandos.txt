@@ -6,3 +6,6 @@ ng new PROJECT-NAME
 ng serve
 ng test
 ng generate component 	
+ng generate service hero
+ng generate guard home	
+
