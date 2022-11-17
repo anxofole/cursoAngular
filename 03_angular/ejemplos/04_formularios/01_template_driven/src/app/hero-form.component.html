@@ -9,7 +9,9 @@
       #name="ngModel"
       required
     />
-    <div [hidden]="name.valid || name.pristine">Name is required</div>
+    <div [hidden]="heroForm.form.get('name')?.valid || name.pristine">
+      Name is required
+    </div>
   </div>
 
   <div>
