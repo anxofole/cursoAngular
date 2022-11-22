@@ -12,3 +12,8 @@ ng generate guard home
 =====================
 
 npx json-server --watch db.json
+
+=====
+ejercicio 2
+	server 
+		node server.js
