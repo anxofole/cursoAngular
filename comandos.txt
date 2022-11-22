@@ -9,3 +9,6 @@ ng generate component
 ng generate service hero
 ng generate guard home	
 
+=====================
+
+npx json-server --watch db.json

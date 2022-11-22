@@ -1,6 +1,7 @@
 <p>settings works!</p>
 
 {{ "HELLO" | translate }}
+{{ "LOGIN.BUTTON.MESSAGE" | translate }}
 <p>
   {{ "HELLO_NAME" | translate: { name: nameParam, surname: surnameParam } }}
 </p>
@@ -15,3 +16,4 @@
 
 <button (click)="switchLang('es')">ES</button>
 <button (click)="switchLang('en')">EN</button>
+<button (click)="translateInstant()">Translate</button>

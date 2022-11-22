@@ -3,14 +3,11 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "heroes": {
+    "cypress": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
-        },
-        "@schematics/angular:application": {
-          "strict": true
         }
       },
       "root": "",
@@ -20,19 +17,14 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/heroes",
+            "outputPath": "dist/cypress",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -72,10 +64,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "heroes:build:production"
+              "browserTarget": "cypress:build:production"
             },
             "development": {
-              "browserTarget": "heroes:build:development"
+              "browserTarget": "cypress:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +75,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "heroes:build"
+            "browserTarget": "cypress:build"
           }
         },
         "test": {
@@ -94,24 +86,19 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "heroes:serve"
+            "devServerTarget": "cypress:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "heroes:serve:production"
+              "devServerTarget": "cypress:serve:production"
             }
           }
         },
@@ -122,46 +109,47 @@
             "headless": false
           }
         },
+        "ct": {
+          "builder": "@cypress/schematic:cypress",
+          "options": {
+            "devServerTarget": "cypress:serve",
+            "watch": true,
+            "headless": false,
+            "testingType": "component"
+          },
+          "configurations": {
+            "development": {
+              "devServerTarget": "cypress:serve:development"
+            }
+          }
+        },
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "heroes:serve",
+            "devServerTarget": "cypress:serve",
             "watch": true,
             "headless": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "heroes:serve:production"
+              "devServerTarget": "cypress:serve:production"
             }
           }
         },
         "e2e-ci": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "heroes:serve",
+            "devServerTarget": "cypress:serve",
             "headless": true,
             "watch": false
           },
           "configurations": {
             "production": {
-              "devServerTarget": "heroes:serve:production"
+              "devServerTarget": "cypress:serve:production"
             }
-          }
-        },
-        "lint": {
-          "builder": "@angular-eslint/builder:lint",
-          "options": {
-            "lintFilePatterns": [
-              "src/**/*.ts",
-              "src/**/*.html"
-            ]
           }
         }
       }
     }
-  },
-  "defaultProject": "heroes",
-  "cli": {
-    "defaultCollection": "@angular-eslint/schematics"
   }
 }

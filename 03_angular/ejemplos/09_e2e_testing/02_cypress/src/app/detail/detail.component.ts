@@ -6,10 +6,9 @@ import { HeroService } from '../hero.service';
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss']
+  styleUrls: ['./detail.component.scss'],
 })
 export class DetailComponent implements OnInit {
-
   @Input()
   public hero: Hero | null = null;
   @Output()
@@ -28,7 +27,7 @@ export class DetailComponent implements OnInit {
       if (params['id'] !== undefined) {
         const id = +params['id'];
         this.navigated = true;
-        this.heroService.getHero(id).subscribe(hero => (this.hero = hero!));
+        this.heroService.getHero(id).subscribe((hero) => (this.hero = hero!));
       } else {
         this.navigated = false;
         this.hero = new Hero('');
@@ -37,11 +36,12 @@ export class DetailComponent implements OnInit {
   }
 
   save(): void {
-      this.heroService.save(this.hero!).subscribe({
-        next: (hero) => {
+    this.heroService.save(this.hero!).subscribe({
+      next: (hero) => {
         this.hero = hero; // saved hero, w/ id if new
         this.goBack(hero);
-      }, error: (error) => (this.error = error)
+      },
+      error: (error) => (this.error = error),
     }); // TODO: Display error message
   }
 

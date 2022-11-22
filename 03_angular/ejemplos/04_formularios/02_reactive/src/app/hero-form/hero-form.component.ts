@@ -21,10 +21,14 @@ export function forbiddenNameValidator(nameRe: RegExp): ValidatorFn {
   selector: 'app-hero-form',
   templateUrl: './hero-form.component.html',
 })
-export class HeroFormComponent {
+export class HeroFormComponent implements OnInit {
   public heroForm: FormGroup;
   public states = ['CA', 'MD', 'OH', 'VA'];
   public date = new Date();
+
+  ngOnInit(): void {
+    this.onChanges();
+  }
 
   private nameControl: FormControl = new FormControl('', [
     Validators.required,
@@ -56,12 +60,20 @@ export class HeroFormComponent {
   }
 
   public update(): void {
-    this.heroForm.setValue({
+    this.heroForm.patchValue({
       name: 'Mr.Heroe',
       street: 'Calle del Sol',
       state: this.states[1],
       zip: 46000,
       power: 'flight',
     });
+  }
+
+  public onChanges(): void {
+    this.heroForm.controls['name'].valueChanges
+      .pipe(debounceTime(500))
+      .subscribe((value) => {
+        console.log(value);
+      });
   }
 }

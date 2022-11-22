@@ -8,12 +8,13 @@ import { Message, Repository } from '../repository';
     <h1>Messages</h1>
     <ul>
       <li *ngFor="let m of messages">
-        {{m.id}} - <a routerLink="/messages/{{folder}}/{{m.id}}">{{m.text}}</a>
+        {{ m.id }} -
+        <a routerLink="/messages/{{ folder }}/{{ m.id }}">{{ m.text }}</a>
       </li>
     </ul>
     <a routerLink="/settings/pagesize">Change Page Size</a>
     <a routerLink="/">Back</a>
-  `
+  `,
 })
 export class MessagesComponent {
   folder: string;

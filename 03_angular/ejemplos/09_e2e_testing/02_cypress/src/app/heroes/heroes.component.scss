@@ -1,6 +1,6 @@
 .selected {
-  background-color: #CFD8DC !important;
-  background-color: rgb(0,120,215) !important;
+  background-color: #cfd8dc !important;
+  background-color: rgb(0, 120, 215) !important;
   color: white;
 }
 .heroes {
@@ -13,17 +13,17 @@
   cursor: pointer;
   position: relative;
   left: 0;
-  background-color: #EEE;
-  margin: .5em;
-  padding: .5em;
+  background-color: #eee;
+  margin: 0.5em;
+  padding: 0.5em;
   height: 1.6em;
   border-radius: 4px;
 }
 .heroes li:hover {
-  color: #607D8B;
-  color: rgb(0,120,215);
-  background-color: #DDD;
-  left: .1em;
+  color: #607d8b;
+  color: rgb(0, 120, 215);
+  background-color: #ddd;
+  left: 0.1em;
 }
 .heroes li.selected:hover {
   /*background-color: #BBD8DC !important;*/
@@ -38,14 +38,14 @@
   font-size: small;
   color: white;
   padding: 0.8em 0.7em 0 0.7em;
-  background-color: #607D8B;
-  background-color: rgb(0,120,215);
+  background-color: #607d8b;
+  background-color: rgb(0, 120, 215);
   line-height: 1em;
   position: relative;
   left: -1px;
   top: -4px;
   height: 1.8em;
-  margin-right: .8em;
+  margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
 }
 button {
@@ -60,10 +60,12 @@ button {
 button:hover {
   background-color: #cfd8dc;
 }
-.error {color:red;}
-button.delete-button{
-  float:right;
+.error {
+  color: red;
+}
+button.delete-button {
+  float: right;
   background-color: gray !important;
-  background-color: rgb(216,59,1) !important;
-  color:white;
+  background-color: rgb(216, 59, 1) !important;
+  color: white;
 }

@@ -1,0 +1,30 @@
+.actions {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.posts {
+  margin: 0;
+  padding: 0;
+}
+
+.post {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding: 10px;
+}
+
+.post-userid {
+  display: inline-block;
+  width: 10%;
+}
+
+.post-title {
+  flex: 1;
+}
+
+.post-delete:hover {
+  background: red;
+}

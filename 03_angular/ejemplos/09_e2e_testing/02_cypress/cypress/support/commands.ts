@@ -1,14 +1,9 @@
 import '@testing-library/cypress';
 
-
 declare global {
   namespace Cypress {
     interface Chainable<Subject = any> {
-      clickMenuOption(
-        option:
-          | 'Dashboard'
-          | 'Heroes'
-      ): void;
+      clickMenuOption(option: 'Dashboard' | 'Heroes'): void;
       containsTotalHeroes(count: number): void;
       fillInputWithPlaceholder(placeholder: string, value: string): void;
     }
@@ -21,21 +16,14 @@ Cypress.Commands.add('containsTotalHeroes', (count: number): void => {
 
 Cypress.Commands.add(
   'clickMenuOption',
-  (
-    option:
-    | 'Dashboard'
-    | 'Heroes'
-  ): void => {
+  (option: 'Dashboard' | 'Heroes'): void => {
     cy.get('nav a').contains(option).wait(400).click();
   }
 );
 
 Cypress.Commands.add(
   'fillInputWithPlaceholder',
-  (
-    placeholder: string,
-    value: string
-  ): void => {
+  (placeholder: string, value: string): void => {
     cy.findByPlaceholderText(placeholder).type(value);
   }
 );

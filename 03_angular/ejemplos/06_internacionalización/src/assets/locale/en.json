@@ -1,4 +1,9 @@
 {
   "HELLO": "Hello world!",
-  "HELLO_NAME": "Hello {{name}} {{surname}}"
+  "HELLO_NAME": "Hello {{name}} {{surname}}",
+  "LOGIN": {
+    "BUTTON": {
+      "MESSAGE": "Message"
+    }
+  }
 }

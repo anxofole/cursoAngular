@@ -1,0 +1,19 @@
+<h1>Posts</h1>
+
+<form class="actions" [formGroup]="filtersForms">
+  <select formControlName="userFilter">
+    <option></option>
+    <option *ngFor="let user of users" [value]="user">{{user}}</option>
+  </select>
+  <input type="text" placeholder="Filter by title..." formControlName="titleFilter">
+  <button class="btn" [routerLink]="['create']">Create</button>
+</form>
+
+<ul class="posts">
+  <li class="post" *ngFor="let post of posts">
+    <span class="post-userid">User [{{post.userId}}]</span>
+    <span class="post-title">{{post.title}}</span>
+    <button class="btn post-edit" [routerLink]="['edit', post.id]">edit</button>
+    <button class="btn post-delete" (click)="delete(post)">X</button>
+  </li>
+</ul>

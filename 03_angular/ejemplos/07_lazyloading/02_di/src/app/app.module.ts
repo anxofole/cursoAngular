@@ -27,7 +27,7 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    SharedModule, //.forRoot(),
+    SharedModule, //forRoot(),
   ],
   exports: [RouterModule],
   providers: [],

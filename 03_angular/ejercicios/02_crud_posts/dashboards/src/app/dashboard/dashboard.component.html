@@ -1,0 +1,19 @@
+<header class="header">
+  <nav>
+    <ul>
+      <li>
+        <a [routerLink]="['posts']" routerLinkActive="active">Posts</a>
+      </li>
+      <li>
+        <a [routerLink]="['logs']" routerLinkActive="active">Logs</a>
+      </li>
+      <li>
+        <a (click)="logout();">Logout [{{currentUser.username}}]</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<div class="page">
+  <router-outlet></router-outlet>
+</div>

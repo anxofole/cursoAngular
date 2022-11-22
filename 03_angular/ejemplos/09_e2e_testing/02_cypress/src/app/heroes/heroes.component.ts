@@ -6,10 +6,9 @@ import { HeroService } from '../hero.service';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.scss']
+  styleUrls: ['./heroes.component.scss'],
 })
 export class HeroesComponent implements OnInit {
-
   public heroes: Hero[] = [];
   public selectedHero: Hero | null = null;
   public addingHero = false;
@@ -18,12 +17,10 @@ export class HeroesComponent implements OnInit {
   constructor(private router: Router, private heroService: HeroService) {}
 
   getHeroes(): void {
-    this.heroService
-      .getHeroes()
-      .subscribe({
-        next: (heroes) => (this.heroes = heroes),
-        error: (error) => (this.error = error)
-      })
+    this.heroService.getHeroes().subscribe({
+      next: (heroes) => (this.heroes = heroes),
+      error: (error) => (this.error = error),
+    });
   }
 
   addHero(): void {
@@ -42,12 +39,13 @@ export class HeroesComponent implements OnInit {
     event.stopPropagation();
     this.heroService.delete(hero).subscribe({
       next: (res) => {
-      this.heroes = this.heroes.filter(h => h !== hero);
-      if (this.selectedHero === hero) {
-        this.selectedHero = null;
-      }
-    }, error: (error) => (this.error = error)
-  });
+        this.heroes = this.heroes.filter((h) => h !== hero);
+        if (this.selectedHero === hero) {
+          this.selectedHero = null;
+        }
+      },
+      error: (error) => (this.error = error),
+    });
   }
 
   ngOnInit(): void {

@@ -1,0 +1,35 @@
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()" novalidate>
+  <h1>Create post</h1>
+
+  <div class="form-row">
+    <label>userId:
+      <input type="number" class="form-input" formControlName="userId">
+    </label>
+    <div [hidden]="postForm.controls['userId'].valid || postForm.controls['userId'].pristine">
+      userId is invalid
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>title:
+      <input type="text"  class="form-input" formControlName="title">
+    </label>
+    <div [hidden]="postForm.controls['title'].valid || postForm.controls['title'].pristine">
+      title is invalid
+    </div>
+  </div>
+
+  <div class="form-row">
+    <label>body:
+      <textarea rows="4"  class="form-input" formControlName="body"></textarea>
+    </label>
+    <div [hidden]="postForm.controls['body'].valid || postForm.controls['title'].pristine">
+      body is invalid
+    </div>
+  </div>
+
+  <div class="form-buttons">
+    <button type="button" class="btn" routerLink="/dashboard/posts">Cancel</button>
+    <button type="submit" class="btn" [disabled]="!postForm.valid">Submit</button>
+  </div>
+</form>

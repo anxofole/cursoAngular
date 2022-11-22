@@ -1,8 +1,18 @@
-<h1>{{title}}</h1>
-    <div class="header-bar">
-      <nav>
-        <a class="header-bar__link" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-        <a class="header-bar__link" routerLink="/heroes-list" routerLinkActive="active">Heroes</a>
-      </nav>
-    </div>
-    <router-outlet></router-outlet>
+<h1>{{ title }}</h1>
+<div class="header-bar">
+  <nav>
+    <a
+      class="header-bar__link"
+      routerLink="/dashboard"
+      routerLinkActive="active"
+      >Dashboard</a
+    >
+    <a
+      class="header-bar__link"
+      routerLink="/heroes-list"
+      routerLinkActive="active"
+      >Heroes</a
+    >
+  </nav>
+</div>
+<router-outlet></router-outlet>

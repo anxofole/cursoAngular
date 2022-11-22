@@ -9,31 +9,24 @@ const API_URL = 'http://localhost:3000/heroes';
 
 @Injectable()
 export class HeroesService {
-
-  constructor(
-    private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getAll(): Observable<Hero[]> {
     return this.http.get<Hero[]>(API_URL);
   }
 
   create(hero: Hero): Observable<Hero> {
-    return this.http.post<Hero>(API_URL, hero)
-      .pipe(
-        catchError(this.handleError)
-      );
+    return this.http
+      .post<Hero>(API_URL, hero)
+      .pipe(catchError(this.handleError));
   }
 
   delete(hero: Hero): Observable<number> {
-    return this.http.delete(`${API_URL}/${hero.id}`)
-      .pipe(map(_ => hero.id));
+    return this.http.delete(`${API_URL}/${hero.id}`).pipe(map((_) => hero.id));
   }
-
 
   private handleError(error: HttpErrorResponse): Observable<never> {
     console.error(error);
     return throwError('Something bad happened; please try again later.');
   }
-
 }
-

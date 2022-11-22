@@ -4,7 +4,7 @@ import { ServiceService } from './service.service';
 @NgModule({
   declarations: [],
   imports: [CommonModule],
-  providers: [ServiceService],
+  // providers: [ServiceService],
 })
 export class SharedModule {
   static forRoot(): ModuleWithProviders<SharedModule> {
